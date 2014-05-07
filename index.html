@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .loading {
+      background-image:url("http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/1-0.gif");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+
+  <!-- makes sure to call the correct url -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var active = null;
+      var iframe = $("#ReviewSummary");
+      var reviewSummary = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang='
+      var seal = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/seal.html?lang='
+      var current_widget = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang='
+
+      $('#RevSumLink').click(function(){
+            current_widget = reviewSummary;
+            iframe.addClass("loading");
+            iframe.attr('src', current_widget + 'en');
+            $('#SealTab').removeClass('active');
+            $('#RevSumTab').attr('class', 'active');
+            return false;
+            }
+          );
+
+      $('#SealLink').click(function(){
+            current_widget = seal;
+            iframe.addClass("loading");
+            iframe.attr('src', current_widget + 'en');
+            $('#RevSumTab').removeClass('active');
+            $('#SealTab').attr('class', 'active');
+            return false;
+            }
+          );
+
+      $(document).on("click", ".loadIFrame:not(.active)", function(){
+        /* you need that kind of selector in order to filter active button */
+        if(active != null){
+          active.removeClass("active");
+        }
+
+        active = $(this);
+        active.addClass('active');
+
+        var lang = active.attr('id');
+
+        iframe.addClass("loading");
+        iframe.attr('src', current_widget + lang);
+        return false;
+      });
+
+      iframe.load(function(){
+        iframe.removeClass("loading");
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="nav nav-tabs nav-justified">
+      <li id="RevSumTab" class="active"><a id='RevSumLink' href="#">Review Summary</a></li>
+      <li id="SealTab"><a id='SealLink' href="#">Seal</a></li>
+    </ul>
+    <br>
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="btn-group-vertical">
+          <button id="ar" type="button" class="btn btn-default btn-sm loadIFrame">Arabic</button>
+          <button id="zh" type="button" class="btn btn-default btn-sm loadIFrame">Chinese</button>
+          <button id="zht" type="button" class="btn btn-default btn-sm loadIFrame">Chinese (traditional)</button>
+          <button id="da" type="button" class="btn btn-default btn-sm loadIFrame">Danish</button>
+          <button id="en" type="button" class="btn btn-default btn-sm loadIFrame">English</button>
+          <button id="fi" type="button" class="btn btn-default btn-sm loadIFrame">Finnish</button>
+          <button id="fr" type="button" class="btn btn-default btn-sm loadIFrame">French</button>
+          <button id="de" type="button" class="btn btn-default btn-sm loadIFrame">German</button>
+          <button id="el" type="button" class="btn btn-default btn-sm loadIFrame">Greek</button>
+          <button id="he" type="button" class="btn btn-default btn-sm loadIFrame">Hebrew</button>
+          <button id="id" type="button" class="btn btn-default btn-sm loadIFrame">Indonesian</button>
+          <button id="it" type="button" class="btn btn-default btn-sm loadIFrame">Italian</button>
+          <button id="ja" type="button" class="btn btn-default btn-sm loadIFrame">Japanese</button>
+          <button id="ko" type="button" class="btn btn-default btn-sm loadIFrame">Korean</button>
+          <button id="lt" type="button" class="btn btn-default btn-sm loadIFrame">Lithuanian</button>
+          <button id="ms" type="button" class="btn btn-default btn-sm loadIFrame">Malay</button>
+          <button id="no" type="button" class="btn btn-default btn-sm loadIFrame">Norwegian</button>
+          <button id="pl" type="button" class="btn btn-default btn-sm loadIFrame">Polish</button>
+          <button id="pt" type="button" class="btn btn-default btn-sm loadIFrame">Portuguese</button>
+          <button id="pt-BR" type="button" class="btn btn-default btn-sm loadIFrame">Portuguese (Brasilian)</button>
+          <button id="ru" type="button" class="btn btn-default btn-sm loadIFrame">Russian</button>
+          <button id="es" type="button" class="btn btn-default btn-sm loadIFrame">Spanish</button>
+          <button id="sv" type="button" class="btn btn-default btn-sm loadIFrame">Swedish</button>
+          <button id="th" type="button" class="btn btn-default btn-sm loadIFrame">Thai</button>
+          <button id="tr" type="button" class="btn btn-default btn-sm loadIFrame">Turkish</button>
+          <button id="vi" type="button" class="btn btn-default btn-sm loadIFrame">Vietnamese</button>
+        </div>
+      </div>
+      <div class="col-lg-10">
+        <iframe id="ReviewSummary" style="width: 800px; height: 1200px" src="http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang=en" seamless
+        class="icon-spinner icon-spin icon-large">
+        Your browser doesn't support iframes.
+      </iframe>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
