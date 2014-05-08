@@ -11,7 +11,7 @@
     .loading {
       background-image:url("http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/1-0.gif");
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: top;
     }
   </style>
 
@@ -45,7 +45,7 @@
           );
 
       $(document).on("click", ".loadIFrame:not(.active)", function(){
-        /* you need that kind of selector in order to filter active button */
+        /* we need that kind of selector in order to filter the active button */
         if(active != null){
           active.removeClass("active");
         }
@@ -107,8 +107,7 @@
         </div>
       </div>
       <div class="col-lg-10">
-        <iframe id="ReviewSummary" style="width: 800px; height: 1200px" src="http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang=en" seamless
-        class="icon-spinner icon-spin icon-large">
+        <iframe id="ReviewSummary" style="width: 800px; height: 1200px" src="http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang=en" seamless class="icon-spinner icon-spin icon-large" frameBorder=0>
         Your browser doesn't support iframes.
       </iframe>
     </div>
