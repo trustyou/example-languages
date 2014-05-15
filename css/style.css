@@ -1,0 +1,105 @@
+/* General styles */
+
+body {
+	background: #fff;
+	font: 14px/18px "Roboto", Arial, Helvetica sans-serif;
+}
+
+p {
+	color: #333;
+	font-weight: 300;
+	line-height: 1.6em;
+}
+
+b, strong {
+	font-weight: 500;
+}
+
+h1 {
+	margin: 0;
+	color: #666;
+	text-align: center;
+	font-weight: 300;
+	font-size: 1.8em;
+}
+
+.container {
+	position: relative;
+	margin: 0 auto;
+	padding: 30px 0;
+	width: 1000px;
+}
+
+.loading {
+	background-image:url("http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/1-0.gif");
+	background-position: center 100px;
+	background-repeat: no-repeat;
+}
+
+.cta {
+	margin: 20px 0 40px;
+	text-align: center;
+	font-weight: normal;
+}
+
+.cta:before,
+.cta:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+
+.cta.btn-group {
+	display: inline-block;
+}
+
+.iframe-wrapper {
+	float: left;
+	margin-left: -1px;
+	width: 850px;
+	border: 1px solid #e5e5e5;
+	border-radius: 0 4px 4px 4px;
+}
+
+.iframe-wrapper iframe {
+	width: 100%;
+	height: 1200px;
+}
+
+.btn-default {
+	border-color: #e5e5e5;
+}
+
+.btn-group-vertical {
+	position: relative;
+}
+
+.btn-group-vertical:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 100;
+	width: 7px;
+	height: 100%;
+	background: -moz-linear-gradient(left, rgba(0,0,0,0) 1%, rgba(0,0,0,0.08) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(1%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.08)));
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0) 1%,rgba(0,0,0,0.08) 100%);
+	background: -o-linear-gradient(left, rgba(0,0,0,0) 1%,rgba(0,0,0,0.08) 100%);
+	background: -ms-linear-gradient(left, rgba(0,0,0,0) 1%,rgba(0,0,0,0.08) 100%);
+	background: linear-gradient(to right, rgba(0,0,0,0) 1%,rgba(0,0,0,0.08) 100%);
+	content: '';
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#1f000000',GradientType=1 );
+}
+
+.btn-group-vertical>.btn:first-child:not(:last-child) {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.btn-group-vertical>.btn:last-child:not(:first-child) {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 4px;
+}
