@@ -30,12 +30,6 @@ h1 {
 	width: 1000px;
 }
 
-.loading {
-	background-image:url("http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/1-0.gif");
-	background-position: center 100px;
-	background-repeat: no-repeat;
-}
-
 .cta {
 	margin: 20px 0 40px;
 	text-align: center;

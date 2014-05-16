@@ -7,7 +7,6 @@
   <!-- Scripts -->
 
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
   <!-- These CSS files are for styling purposes only; they are not required to visualize the TrustYou API -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,500,700"/>
@@ -25,23 +24,17 @@
 
       $('#RevSumLink').click(function(){
         current_widget = reviewSummary;
-        iframe.addClass("loading");
         iframe.attr('src', current_widget + 'en');
         $('#SealTab').removeClass('active');
         $('#RevSumTab').addClass("active");
-        return false;
-      }
-      );
+      });
 
       $('#SealLink').click(function(){
         current_widget = seal;
-        iframe.addClass("loading");
         iframe.attr('src', current_widget + 'en');
         $('#RevSumTab').removeClass('active');
         $('#SealTab').addClass("active");
-        return false;
-      }
-      );
+      });
 
       $(document).on("click", ".loadIFrame:not(.active)", function(){
         /* we need that kind of selector in order to filter the active button */
@@ -54,15 +47,8 @@
 
         var lang = active.attr('id');
 
-        iframe.addClass("loading");
         iframe.attr('src', current_widget + lang);
-        return false;
       });
-
-      iframe.load(function(){
-        iframe.removeClass("loading");
-      });
-
     });
 </script>
 </head>
@@ -84,6 +70,7 @@
       <button id="zh" type="button" class="btn btn-default btn-sm loadIFrame">Chinese</button>
       <button id="zht" type="button" class="btn btn-default btn-sm loadIFrame">Chinese (traditional)</button>
       <button id="da" type="button" class="btn btn-default btn-sm loadIFrame">Danish</button>
+      <button id="nl" type="button" class="btn btn-default btn-sm loadIFrame">Dutch</button>
       <button id="en" type="button" class="btn btn-default btn-sm loadIFrame">English</button>
       <button id="fi" type="button" class="btn btn-default btn-sm loadIFrame">Finnish</button>
       <button id="fr" type="button" class="btn btn-default btn-sm loadIFrame">French</button>
@@ -108,7 +95,7 @@
       <button id="vi" type="button" class="btn btn-default btn-sm loadIFrame">Vietnamese</button>
     </div>
     <div class="iframe-wrapper">
-      <iframe id="ReviewSummary" src="http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang=en" seamless class="icon-spinner icon-spin icon-large" frameBorder=0 allowtransparency="true">
+      <iframe id="ReviewSummary" src="http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang=en" seamless frameBorder=0 allowtransparency="true">
         Your browser doesn't support iframes.
       </iframe>
     </div>
