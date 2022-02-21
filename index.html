@@ -18,9 +18,9 @@
     $(document).ready(function(){
       var active = null;
       var iframe = $("#ReviewSummary");
-      var reviewSummary = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang='
-      var seal = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/seal.html?lang='
-      var current_widget = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang='
+      var reviewSummary = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?key=22222222-2222-2222-2222-222222222222&lang='
+      var seal = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/seal.html?key=22222222-2222-2222-2222-222222222222&lang='
+      var current_widget = 'http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?key=22222222-2222-2222-2222-222222222222&lang='
 
       $('#RevSumLink').click(function(){
         current_widget = reviewSummary;
@@ -95,7 +95,7 @@
       <button id="vi" type="button" class="btn btn-default btn-sm loadIFrame">Vietnamese</button>
     </div>
     <div class="iframe-wrapper">
-      <iframe id="ReviewSummary" src="http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?lang=en" seamless frameBorder=0 allowtransparency="true">
+      <iframe id="ReviewSummary" src="http://api.trustyou.com/hotels/674fa44c-1fbd-4275-aa72-a20f262372cd/tops_flops.html?key=22222222-2222-2222-2222-222222222222&lang=en" seamless frameBorder=0 allowtransparency="true">
         Your browser doesn't support iframes.
       </iframe>
     </div>
