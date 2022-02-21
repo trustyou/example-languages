@@ -11,7 +11,7 @@ In this example you can preview the different languages for these two widgets:
 Live example
 ------------
 
-You can try out the live demo of this example [here](http://trustyou.github.io/example-languages/).
+You can try out the live demo of this example [here](https://trustyou.github.io/example-languages/).
 
 
 ![alt tag](img/preview.jpg)
